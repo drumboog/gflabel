@@ -42,6 +42,7 @@ from .bases.cullenect import CullenectBase
 from .bases.modern import ModernBase
 from .bases.none import NoneBase
 from .bases.plain import PlainBase
+from .bases.ruggedbox import RuggedBoxBase
 from .bases.pred import PredBase, PredBoxBase
 from .label import render_divided_label
 from .options import LabelStyle, RenderOptions
@@ -111,7 +112,7 @@ class BaseChoiceAction(argparse.Action):
         if values in deprecated_choices:
             values = deprecated_choices[values]
 
-        choices = ["pred", "plain", "none", "cullenect", "predbox", "modern"]
+        choices = ["pred", "plain", "none", "cullenect", "predbox", "modern", "ruggedbox"]
 
         if values not in choices:
             # Allow prefix-only of choice name, as long as unambiguous
@@ -143,6 +144,7 @@ def base_name_to_subclass(name: str) -> type[LabelBase]:
         "pred": PredBase,
         "predbox": PredBoxBase,
         "plain": PlainBase,
+        "ruggedbox": RuggedBoxBase,
         "none": NoneBase,
         None: NoneBase,
     }
