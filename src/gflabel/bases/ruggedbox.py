@@ -58,4 +58,4 @@ class RuggedBoxBase(LabelBase):
             fillet(part.edges().filter_by(Axis.Z), radius=1)
 
         self.part = part.part
-        self.area = Vector(width_mm - 1, height_mm - 1)
+        self.area = Vector(width_mm - 5, height_mm - 5)
