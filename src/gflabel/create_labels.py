@@ -1,6 +1,6 @@
 from .cli import run
 
-output_root = "C:\\Temp\\3DPrinter\\Gridfinity\\Bins and Labels\\Labels\\Bins\\"
+output_root = "C:\\Temp\\3DPrinter\\Gridfinity\\Bins and Labels\\Labels\\Boxes\\"
 
 def create_label(label_text, file_name):
   run(["ruggedbox", label_text, "--width", "88.7", "--height", "31.25", "-o", output_root + file_name + ".step"])
