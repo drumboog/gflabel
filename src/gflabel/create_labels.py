@@ -1,9 +1,12 @@
+import os
 from .cli import run
 
 output_root = "C:\\Temp\\3DPrinter\\Gridfinity\\Bins and Labels\\Labels\\Boxes\\"
 
 def create_label(label_text, file_name):
   run(["ruggedbox", label_text, "--width", "88.7", "--height", "31.25", "-o", output_root + file_name + ".step"])
+
+os.makedirs(output_root, exist_ok=True)
 
 create_label("SAE  {bolt(5)} {nut} {washer}\nScrews, Nuts, Washers\n#2 #4 #6", "sae_screws_2-6")
 create_label("Metric  {bolt(5,tapping)}\nScrews\nM1 M1.2 M1.4 M1.7", "metric_screws_tapping_less_than_M2")
